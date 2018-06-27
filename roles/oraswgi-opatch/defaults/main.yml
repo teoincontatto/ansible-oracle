@@ -15,7 +15,7 @@
   oracle_group: oinstall                          # Primary group for oracle_user.
 
   oracle_sw_source_www: http://www/orasw     # address to all software if using the get_url module when putting software on the host(s)
-  oracle_sw_source_local: /tmp  # Path to all software if using the copy module when putting software on the host(s)
+  oracle_sw_source_local: /ansible-oracle  # Path to all software if using the copy module when putting software on the host(s)
   is_sw_source_local: true
   install_from_nfs: false
   oracle_sw_copy: "{% if install_from_nfs %}False{% else %}True{% endif %}"
