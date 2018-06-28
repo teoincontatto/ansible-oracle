@@ -3,7 +3,7 @@
 
 
  - name: Manage database(s)
-   hosts: "{{ hostgroup }}"
+   hosts: all
    sudo: yes
    roles:
       - oradb-manage-db

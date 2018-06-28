@@ -437,7 +437,7 @@ DISKGROUPNAME={{ datafile_dest.lstrip('+') }}
 # Default value : None
 # Mandatory     : No
 #-----------------------------------------------------------------------------
-ASMSNMP_PASSWORD="{{ dbh.oracle_db_passwd }}"
+ASMSNMP_PASSWORD={%if asmmonitorpassword is defined %}{{asmmonitorpassword}}{% else %}{{default_gipass}}{% endif %}
 
 #-----------------------------------------------------------------------------
 # Name          : RECOVERYGROUPNAME

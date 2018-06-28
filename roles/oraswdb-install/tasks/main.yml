@@ -35,12 +35,11 @@
     when: not is_sw_source_local and oracle_sw_copy
 
   - name: install-home-db | Transfer oracle installfiles to server (local)
-    copy: src={{ oracle_sw_source_local }}/{{ item[0].filename }} dest={{ oracle_stage }} mode=775 force=no
+    copy: src={{ oracle_sw_source_local }}/{{ item[0].filename }} dest={{ oracle_stage }} mode=775 force=no owner={{ oracle_user }} group={{ oracle_group }}
     with_nested:
       - "{{oracle_sw_image_db}}"
       - "{{oracle_databases}}"
     become: yes
-    become_user: "{{ oracle_user }}"
     run_once: "{{ configure_cluster}}"
     when: item[0].version == item[1].oracle_version_db and is_sw_source_local and oracle_sw_copy
     tags:

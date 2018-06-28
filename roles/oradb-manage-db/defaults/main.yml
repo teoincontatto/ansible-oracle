@@ -90,7 +90,7 @@
 # This is an example layout of a database installation
   oracle_databases:                                            # Dictionary describing the databases to be installed
         - home: db1                                            # 'Last' directory in ORACLE_HOME path (e.g /u01/app/oracle/12.1.0.2/racdb)
-          oracle_version_db: 12.2.0.1                          # Oracle versiono
+          oracle_version_db: 11.2.0.3                          # Oracle versiono
           oracle_edition: EE                                   # The edition of database-server (EE,SE,SEONE)
           oracle_db_name: orcl                                 # Database name
           oracle_db_type: SI                                   # Type of database (RAC,RACONENODE,SI)
